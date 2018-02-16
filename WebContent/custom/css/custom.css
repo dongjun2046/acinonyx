@@ -1,0 +1,394 @@
+@font-face {
+	font-family: 'Roboto Slab Light';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Roboto Slab Light'),
+		url('../fonts/roboto/RobotoSlab-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roboto Slab Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Roboto Slab Regular'),
+		url('../fonts/roboto/RobotoSlab-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roboto Slab Thin';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Roboto Slab Thin'),
+		url('../fonts/roboto/RobotoSlab-Thin.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roboto Slab Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Roboto Slab Bold'),
+		url('../fonts/roboto/RobotoSlab-Bold.woff') format('woff');
+}
+
+* {
+	font-family: 'Roboto Slab Regular';
+	font-weight: normal;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 1.5 em;
+}
+
+.shadow {
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.navbar {
+	background: #93cede; /* Old browsers */
+	background: -moz-linear-gradient(top, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede',
+		endColorstr='#49a5bf', GradientType=0); /* IE6-9 */
+}
+
+nonee {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9fcf7+0,f5f9f0+100;L+Green+3D */
+	background: rgb(249, 252, 247); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(249, 252, 247, 1) 0%,
+		rgba(245, 249, 240, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(249, 252, 247, 1) 0%,
+		rgba(245, 249, 240, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(249, 252, 247, 1) 0%,
+		rgba(245, 249, 240, 1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7',
+		endColorstr='#f5f9f0', GradientType=0); /* IE6-9 */
+}
+
+.navbar-brand {
+	color: #fff;
+}
+
+.navbar-inverse {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cede+0,75bdd1+41,49a5bf+100;Blue+3D+%235 */
+	background: #93cede; /* Old browsers */
+	background: -moz-linear-gradient(top, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #93cede 0%, #75bdd1 41%, #49a5bf 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede',
+		endColorstr='#49a5bf', GradientType=0); /* IE6-9 */
+}
+
+.nav-container {
+	width: 98%;
+	font-family: 'Roboto Slab Dark';
+}
+
+.main-container {
+	margin-top: 80px;
+	width: 98%;
+	margin-bottom: 80px;
+}
+
+.panel, .panel-primary, .panel-heading, .modal {
+	border-radius: 0px;
+}
+
+.panel-heading {
+	font-family: 'Roboto Slab Regular';
+}
+
+input[type=file], input[type=text] {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	height: 30px;
+	padding: 4px 4px 4px 4px;
+	color: #555;
+}
+
+input[type=submit] {
+	background: #2471A3;
+	padding: 4px 4px 4px 4px;
+	border: none;
+	width: 200px;
+	height: 40px;
+	color: #fff;
+}
+
+input[type=button] {
+	background: #2471A3;
+	padding: 4px 4px 4px 4px;
+	border: none;
+	width: 200px;
+	height: 40px;
+	color: #fff;
+}
+
+.file {
+	width: 100%;
+}
+
+.validateModal, modal-lg {
+	margin-top: 15%;
+	border-radius: 0px;
+}
+
+#eachline {
+	font-size: 12px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	color: #34495E;
+	font-family: 'Roboto Slab Regular';
+	letter-spacing: 1.5 em;
+	border-left: 2px solid #28B463;
+}
+
+.align-left {
+	margin-left: 2px;
+	padding-left: 2px;
+}
+
+.align-right {
+	margin-right: 2px;
+	padding-right: 2px;
+}
+
+.noborder {
+	border-radius: 0px;
+}
+
+.caret {
+	padding-right: 0px;
+}
+
+.panel-login {
+	margin-top: 75px;
+}
+
+.panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align: center;
+}
+
+.panel-login>.panel-heading a {
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.panel-login>.panel-heading a.active {
+	color: #029f5b;
+	font-size: 18px;
+}
+
+.panel-login>.panel-heading hr {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+	background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.panel-login input[type="text"], .panel-login  input[type="password"] {
+	height: 40px;
+}
+
+input[type="text"], input[type="password"] {
+	height: 30px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	border-radius: 0px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+	border: 1px solid #3498DB;
+}
+
+input[type="checkbox"] {
+	letter-spacing: 3 em;
+}
+
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+	border-radius: 0px;
+}
+
+.btn-login:hover, .btn-login:focus {
+	color: #000;
+	background-color: #3498DB;
+	border-color: #53A3CD;
+}
+
+.list-special .list-group-item:first-child {
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+}
+
+.list-special .list-group-item:last-child {
+	border-bottom-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+}
+
+.menu-ico-collapse {
+	margin-left: 4px;
+}
+
+.list-group-submenu .list-group-item:first-child {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.list-group-submenu .list-group-item:last-child {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-family: 'Roboto Slab Thin';
+	background-color: #FDFEFE;
+	color: #7B241C;
+	font-size: 10px;
+	letter-spacing: 0.25em;
+	padding-right: 40px;
+}
+
+.white-color {
+	color: #fff;
+}
+
+.ranger-policy table {
+	font-family: 'Roboto Slab Bold';
+	font-size: 16px;
+	letter-spacing: 0.25em;
+	width: 100%;
+}
+
+.ranger-policy table td {
+	height: 40px;
+	border: 0px solid #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.ranger-policy input[type=text] {
+	width: 100%;
+}
+
+.errmsg {
+	color: red;
+	font-color: red;
+	padding-left: 40%;
+}
+
+.logo {
+	color: #000;
+	font-family: 'Roboto Slab Bold';
+	font-size: 16px;
+	letter-spacing: 0.25em;
+}
+
+.ranger-list a:hover, a:focus {
+	cursor: pointer;
+}
+
+.ranger-list table * {
+	padding: 2px 5px 2px 5px;
+	letter-spacing: 0.25em;
+	font-size: 12px;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter",
+		"Lucida Typewriter", monospace;
+}
+
+.ranger-list table {
+	width: 100%;
+}
+
+.ranger-list table thead {
+	background: #3498DB;
+	color: #17202A;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.code {
+	font-size: 16px;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter",
+		"Lucida Typewriter", monospace;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+	padding: 5px 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 1px;
+	background-color: #fff;
+	font-size: 16px;
+	resize: none;
+}
+
+#err-msg {
+	font-size: 12px;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter",
+		"Lucida Typewriter", monospace;
+}
+
+.panel-heading {
+	background: #AED6F1;
+}
+
+#ticket-container .tab-content {
+	padding-top: 5px;
+}
+
+#ticket-container .nav-tabs>li>a {
+	border-radius: 0px;
+	font-size: 10px;
+}
+
+.popover {
+	min-width: 30em !important;
+}

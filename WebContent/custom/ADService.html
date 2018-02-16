@@ -1,0 +1,3364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+-
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	targetNamespace="http://daimler.com/adminnet/webservices/usermanagement"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:dm="http://www.develop.com/web/services/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://daimler.com/adminnet/webservices/usermanagement"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+
+	<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Daimler Admin.NET UserManagement Service</wsdl:documentation>
+
+
+-<wsdl:types>
+
+
+-<s:schema
+			targetNamespace="http://daimler.com/adminnet/webservices/usermanagement"
+			elementFormDefault="qualified">
+
+
+-<s:element name="CreateAccountAdministrative">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="ouLocationDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="accountType" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="userProperties" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="templateDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="initialPassword" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="createUnlocked" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="CreateAccountAdministrativeResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="CreateAccountAdministrativeResult"
+							type="tns:CreateAccountAdministrativeResult" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="CreateAccountAdministrativeResult">
+
+
+-<s:complexContent mixed="false">
+
+
+-<s:extension base="tns:WebServiceResult">
+
+
+-<s:sequence>
+
+							<s:element name="AccountDn" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountLdapPath" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountOuLocationDn" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+						</s:sequence>
+
+					</s:extension>
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:complexType name="WebServiceResult">
+
+
+-<s:sequence>
+
+					<s:element name="GlobalOperationResult" type="s:boolean"
+						maxOccurs="1" minOccurs="1" />
+
+					<s:element name="PartialOperations"
+						type="tns:ArrayOfPartialOperation" maxOccurs="1" minOccurs="0" />
+
+					<s:element name="GlobalErrorDetail" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:complexType name="ArrayOfPartialOperation">
+
+
+-<s:sequence>
+
+					<s:element name="PartialOperation" type="tns:PartialOperation"
+						maxOccurs="unbounded" minOccurs="0" nillable="true" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:complexType name="PartialOperation">
+
+
+-<s:sequence>
+
+					<s:element name="Name" type="s:string" maxOccurs="1" minOccurs="0" />
+
+					<s:element name="Success" type="s:boolean" maxOccurs="1"
+						minOccurs="1" />
+
+					<s:element name="ErrorNumber" type="s:int" maxOccurs="1"
+						minOccurs="1" />
+
+					<s:element name="ErrorDetail" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:element name="CreateAccountCdBased">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="cdUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="ouLocationDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="userProperties" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="templateDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="initialPassword" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="createUnlocked" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="CreateAccountCdBasedResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="CreateAccountCdBasedResult"
+							type="tns:CreateAccountCdBasedResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="CreateAccountCdBasedResult">
+
+
+-<s:complexContent mixed="false">
+
+
+-<s:extension base="tns:WebServiceResult">
+
+
+-<s:sequence>
+
+							<s:element name="AccountDn" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountLdapPath" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountOuLocationDn" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+						</s:sequence>
+
+					</s:extension>
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="CreateAccountCdBasedEx">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="cdUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="ouLocationDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="userProperties" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="templateDn" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="initialPassword" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="createUnlocked" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="metatags" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="CreateAccountCdBasedExResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="CreateAccountCdBasedExResult"
+							type="tns:CreateAccountCdBasedExResult" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="CreateAccountCdBasedExResult">
+
+
+-<s:complexContent mixed="false">
+
+
+-<s:extension base="tns:WebServiceResult">
+
+
+-<s:sequence>
+
+							<s:element name="AccountDn" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountLdapPath" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="AccountOuLocationDn" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+							<s:element name="AccountObjectGuid" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+						</s:sequence>
+
+					</s:extension>
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="LockAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="accountLocked" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="removeLockedOut" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="reason" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="LockAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="LockAccountResult" type="tns:LockAccountResult"
+							maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="LockAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="LockAccountEx">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="accountLocked" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="removeLockedOut" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="reason" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="LockAccountExResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="LockAccountExResult" type="tns:LockAccountResult"
+							maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="ResetPassword">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="newPassword" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="userMustChangePwdOnNextLogon" type="s:boolean"
+							maxOccurs="1" minOccurs="1" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="ResetPasswordResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="ResetPasswordResult"
+							type="tns:ResetPasswordResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="ResetPasswordResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="DeleteAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="checkReferences" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="DeleteAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="DeleteAccountResult"
+							type="tns:DeleteAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="DeleteAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="ModifyAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="userProperties" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="ModifyAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="ModifyAccountResult"
+							type="tns:ModifyAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="ModifyAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="UpdateProperties">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="stringProperties"
+							type="tns:ArrayOfArrayOfAnyType" maxOccurs="1" minOccurs="0" />
+
+						<s:element name="stringListProperties"
+							type="tns:ArrayOfArrayOfAnyType" maxOccurs="1" minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="ArrayOfArrayOfAnyType">
+
+
+-<s:sequence>
+
+					<s:element name="ArrayOfAnyType" type="tns:ArrayOfAnyType"
+						maxOccurs="unbounded" minOccurs="0" nillable="true" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:complexType name="ArrayOfAnyType">
+
+
+-<s:sequence>
+
+					<s:element name="anyType" maxOccurs="unbounded" minOccurs="0"
+						nillable="true" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:element name="UpdatePropertiesResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="UpdatePropertiesResult"
+							type="tns:UpdatePropertiesResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="UpdatePropertiesResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="PrepareMoveAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="destinationOuLocationDn" type="s:string"
+							maxOccurs="1" minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="PrepareMoveAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="PrepareMoveAccountResult"
+							type="tns:PrepareMoveAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="PrepareMoveAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="MoveAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="destinationOuLocationDn" type="s:string"
+							maxOccurs="1" minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="MoveAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="MoveAccountResult" type="tns:MoveAccountResult"
+							maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="MoveAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="CancelMoveAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="CancelMoveAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="CancelMoveAccountResult"
+							type="tns:CancelMoveAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="CancelMoveAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="RefreshRoleCache">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="RefreshRoleCacheResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="RefreshRoleCacheResult"
+							type="tns:RefreshRoleCacheResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="RefreshRoleCacheResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="RenameAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="adUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="newName" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="contactDc" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="RenameAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="RenameAccountResult"
+							type="tns:RenameAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="RenameAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+					<s:extension base="tns:WebServiceResult" />
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="GetAccountsByCorpDirUid">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="corpDirUid" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="AdUserAccountInfo">
+
+
+-<s:sequence>
+
+					<s:element name="AdUserId" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+					<s:element name="AccountName" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+					<s:element name="CommonName" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+					<s:element name="Ou" type="s:string" maxOccurs="1" minOccurs="0" />
+
+					<s:element name="AccountTag" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:complexType name="ArrayOfAdUserAccountInfo">
+
+
+-<s:sequence>
+
+					<s:element name="AdUserAccountInfo" type="tns:AdUserAccountInfo"
+						maxOccurs="unbounded" minOccurs="0" nillable="true" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:complexType name="ArrayOfString">
+
+
+-<s:sequence>
+
+					<s:element name="string" type="s:string" maxOccurs="unbounded"
+						minOccurs="0" nillable="true" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:element name="GetAccountsByCorpDirUidResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="GetAccountsByCorpDirUidResult"
+							type="tns:GetAccountsByCorpDirUidResult" maxOccurs="1"
+							minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="GetAccountsByCorpDirUidResult">
+
+
+-<s:complexContent mixed="false">
+
+
+-<s:extension base="tns:WebServiceResult">
+
+
+-<s:sequence>
+
+							<s:element name="AdUserAccountInfos"
+								type="tns:ArrayOfAdUserAccountInfo" maxOccurs="1" minOccurs="0" />
+
+							<s:element name="AdUserIds" type="tns:ArrayOfString"
+								maxOccurs="1" minOccurs="0" />
+
+							<s:element name="PrimaryAdUserId" type="s:string" maxOccurs="1"
+								minOccurs="0" />
+
+							<s:element name="SecondaryAdUserIds" type="tns:ArrayOfString"
+								maxOccurs="1" minOccurs="0" />
+
+						</s:sequence>
+
+					</s:extension>
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="SetPrimaryAccount">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="corpDirUid" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="primaryAdUserId" type="s:string" maxOccurs="1"
+							minOccurs="0" />
+
+						<s:element name="force" type="s:boolean" maxOccurs="1"
+							minOccurs="1" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:element name="SetPrimaryAccountResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="SetPrimaryAccountResult"
+							type="tns:SetPrimaryAccountResult" maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+
+-<s:complexType name="SetPrimaryAccountResult">
+
+
+-<s:complexContent mixed="false">
+
+
+-<s:extension base="tns:WebServiceResult">
+
+
+-<s:sequence>
+
+							<s:element name="OldPrimaryUserAccount" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+							<s:element name="NewPrimaryUserAccount" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+							<s:element name="OldUserAccountTagging" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+							<s:element name="NewUserAccountTagging" type="s:string"
+								maxOccurs="1" minOccurs="0" />
+
+						</s:sequence>
+
+					</s:extension>
+
+				</s:complexContent>
+
+			</s:complexType>
+
+
+-<s:element name="ShowConfiguration">
+
+				<s:complexType />
+
+			</s:element>
+
+
+-<s:complexType name="UserManagementServiceConfigurationSettings">
+
+
+-<s:sequence>
+
+					<s:element name="ProductVersion" type="s:string" maxOccurs="1"
+						minOccurs="0" />
+
+				</s:sequence>
+
+			</s:complexType>
+
+
+-<s:element name="ShowConfigurationResponse">
+
+
+-<s:complexType>
+
+
+-<s:sequence>
+
+						<s:element name="ShowConfigurationResult"
+							type="tns:UserManagementServiceConfigurationSettings"
+							maxOccurs="1" minOccurs="0" />
+
+					</s:sequence>
+
+				</s:complexType>
+
+			</s:element>
+
+			<s:element name="CreateAccountAdministrativeResult"
+				type="tns:CreateAccountAdministrativeResult" nillable="true" />
+
+			<s:element name="CreateAccountCdBasedResult"
+				type="tns:CreateAccountCdBasedResult" nillable="true" />
+
+			<s:element name="CreateAccountCdBasedExResult"
+				type="tns:CreateAccountCdBasedExResult" nillable="true" />
+
+			<s:element name="LockAccountResult" type="tns:LockAccountResult"
+				nillable="true" />
+
+			<s:element name="ResetPasswordResult" type="tns:ResetPasswordResult"
+				nillable="true" />
+
+			<s:element name="DeleteAccountResult" type="tns:DeleteAccountResult"
+				nillable="true" />
+
+			<s:element name="ModifyAccountResult" type="tns:ModifyAccountResult"
+				nillable="true" />
+
+			<s:element name="PrepareMoveAccountResult"
+				type="tns:PrepareMoveAccountResult" nillable="true" />
+
+			<s:element name="MoveAccountResult" type="tns:MoveAccountResult"
+				nillable="true" />
+
+			<s:element name="CancelMoveAccountResult"
+				type="tns:CancelMoveAccountResult" nillable="true" />
+
+			<s:element name="RefreshRoleCacheResult"
+				type="tns:RefreshRoleCacheResult" nillable="true" />
+
+			<s:element name="RenameAccountResult" type="tns:RenameAccountResult"
+				nillable="true" />
+
+			<s:element name="GetAccountsByCorpDirUidResult"
+				type="tns:GetAccountsByCorpDirUidResult" nillable="true" />
+
+			<s:element name="SetPrimaryAccountResult"
+				type="tns:SetPrimaryAccountResult" nillable="true" />
+
+			<s:element name="UserManagementServiceConfigurationSettings"
+				type="tns:UserManagementServiceConfigurationSettings"
+				nillable="true" />
+
+		</s:schema>
+
+	</wsdl:types>
+
+
+-<wsdl:message name="CreateAccountAdministrativeSoapIn">
+
+		<wsdl:part name="parameters" element="tns:CreateAccountAdministrative" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountAdministrativeSoapOut">
+
+		<wsdl:part name="parameters"
+			element="tns:CreateAccountAdministrativeResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedSoapIn">
+
+		<wsdl:part name="parameters" element="tns:CreateAccountCdBased" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedSoapOut">
+
+		<wsdl:part name="parameters"
+			element="tns:CreateAccountCdBasedResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedExSoapIn">
+
+		<wsdl:part name="parameters" element="tns:CreateAccountCdBasedEx" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedExSoapOut">
+
+		<wsdl:part name="parameters"
+			element="tns:CreateAccountCdBasedExResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:LockAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:LockAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountExSoapIn">
+
+		<wsdl:part name="parameters" element="tns:LockAccountEx" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountExSoapOut">
+
+		<wsdl:part name="parameters" element="tns:LockAccountExResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ResetPasswordSoapIn">
+
+		<wsdl:part name="parameters" element="tns:ResetPassword" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ResetPasswordSoapOut">
+
+		<wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="DeleteAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:DeleteAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="DeleteAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:DeleteAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ModifyAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:ModifyAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ModifyAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:ModifyAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="UpdatePropertiesSoapIn">
+
+		<wsdl:part name="parameters" element="tns:UpdateProperties" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="UpdatePropertiesSoapOut">
+
+		<wsdl:part name="parameters" element="tns:UpdatePropertiesResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="PrepareMoveAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:PrepareMoveAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="PrepareMoveAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:PrepareMoveAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="MoveAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:MoveAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="MoveAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:MoveAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CancelMoveAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:CancelMoveAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CancelMoveAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:CancelMoveAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RefreshRoleCacheSoapIn">
+
+		<wsdl:part name="parameters" element="tns:RefreshRoleCache" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RefreshRoleCacheSoapOut">
+
+		<wsdl:part name="parameters" element="tns:RefreshRoleCacheResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RenameAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:RenameAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RenameAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:RenameAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="GetAccountsByCorpDirUidSoapIn">
+
+		<wsdl:part name="parameters" element="tns:GetAccountsByCorpDirUid" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="GetAccountsByCorpDirUidSoapOut">
+
+		<wsdl:part name="parameters"
+			element="tns:GetAccountsByCorpDirUidResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="SetPrimaryAccountSoapIn">
+
+		<wsdl:part name="parameters" element="tns:SetPrimaryAccount" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="SetPrimaryAccountSoapOut">
+
+		<wsdl:part name="parameters" element="tns:SetPrimaryAccountResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ShowConfigurationSoapIn">
+
+		<wsdl:part name="parameters" element="tns:ShowConfiguration" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ShowConfigurationSoapOut">
+
+		<wsdl:part name="parameters" element="tns:ShowConfigurationResponse" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountAdministrativeHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="ouLocationDn" type="s:string" />
+
+		<wsdl:part name="accountType" type="s:string" />
+
+		<wsdl:part name="userProperties" type="s:string" />
+
+		<wsdl:part name="templateDn" type="s:string" />
+
+		<wsdl:part name="initialPassword" type="s:string" />
+
+		<wsdl:part name="createUnlocked" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountAdministrativeHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:CreateAccountAdministrativeResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedHttpPostIn">
+
+		<wsdl:part name="cdUserId" type="s:string" />
+
+		<wsdl:part name="ouLocationDn" type="s:string" />
+
+		<wsdl:part name="userProperties" type="s:string" />
+
+		<wsdl:part name="templateDn" type="s:string" />
+
+		<wsdl:part name="initialPassword" type="s:string" />
+
+		<wsdl:part name="createUnlocked" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:CreateAccountCdBasedResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedExHttpPostIn">
+
+		<wsdl:part name="cdUserId" type="s:string" />
+
+		<wsdl:part name="ouLocationDn" type="s:string" />
+
+		<wsdl:part name="userProperties" type="s:string" />
+
+		<wsdl:part name="templateDn" type="s:string" />
+
+		<wsdl:part name="initialPassword" type="s:string" />
+
+		<wsdl:part name="createUnlocked" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+		<wsdl:part name="metatags" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CreateAccountCdBasedExHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:CreateAccountCdBasedExResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="accountLocked" type="s:string" />
+
+		<wsdl:part name="removeLockedOut" type="s:string" />
+
+		<wsdl:part name="reason" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:LockAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountExHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="accountLocked" type="s:string" />
+
+		<wsdl:part name="removeLockedOut" type="s:string" />
+
+		<wsdl:part name="reason" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="LockAccountExHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:LockAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ResetPasswordHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="newPassword" type="s:string" />
+
+		<wsdl:part name="userMustChangePwdOnNextLogon" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ResetPasswordHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:ResetPasswordResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="DeleteAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="checkReferences" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="DeleteAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:DeleteAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ModifyAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="userProperties" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="ModifyAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:ModifyAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="PrepareMoveAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="destinationOuLocationDn" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="PrepareMoveAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:PrepareMoveAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="MoveAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="destinationOuLocationDn" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="MoveAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:MoveAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CancelMoveAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="CancelMoveAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:CancelMoveAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RefreshRoleCacheHttpPostIn">
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RefreshRoleCacheHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:RefreshRoleCacheResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RenameAccountHttpPostIn">
+
+		<wsdl:part name="adUserId" type="s:string" />
+
+		<wsdl:part name="newName" type="s:string" />
+
+		<wsdl:part name="contactDc" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="RenameAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:RenameAccountResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="GetAccountsByCorpDirUidHttpPostIn">
+
+		<wsdl:part name="corpDirUid" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="GetAccountsByCorpDirUidHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:GetAccountsByCorpDirUidResult" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="SetPrimaryAccountHttpPostIn">
+
+		<wsdl:part name="corpDirUid" type="s:string" />
+
+		<wsdl:part name="primaryAdUserId" type="s:string" />
+
+		<wsdl:part name="force" type="s:string" />
+
+	</wsdl:message>
+
+
+-<wsdl:message name="SetPrimaryAccountHttpPostOut">
+
+		<wsdl:part name="Body" element="tns:SetPrimaryAccountResult" />
+
+	</wsdl:message>
+
+	<wsdl:message name="ShowConfigurationHttpPostIn" />
+
+
+-<wsdl:message name="ShowConfigurationHttpPostOut">
+
+		<wsdl:part name="Body"
+			element="tns:UserManagementServiceConfigurationSettings" />
+
+	</wsdl:message>
+
+
+-<wsdl:portType name="UserManagementServiceSoap">
+
+
+-<wsdl:operation name="CreateAccountAdministrative">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates administrative user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountAdministrativeSoapIn" />
+
+			<wsdl:output message="tns:CreateAccountAdministrativeSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBased">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a corporate directory based user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountCdBasedSoapIn" />
+
+			<wsdl:output message="tns:CreateAccountCdBasedSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBasedEx">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a corporate directory based blue collared user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountCdBasedExSoapIn" />
+
+			<wsdl:output message="tns:CreateAccountCdBasedExSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Locks/unlocks user acocunt with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:LockAccountSoapIn" />
+
+			<wsdl:output message="tns:LockAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccountEx">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Locks/unlocks blue collared user acocunt with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:LockAccountExSoapIn" />
+
+			<wsdl:output message="tns:LockAccountExSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ResetPassword">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reset password of user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:ResetPasswordSoapIn" />
+
+			<wsdl:output message="tns:ResetPasswordSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="DeleteAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:DeleteAccountSoapIn" />
+
+			<wsdl:output message="tns:DeleteAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ModifyAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Modifies user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:ModifyAccountSoapIn" />
+
+			<wsdl:output message="tns:ModifyAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="UpdateProperties">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Updates special properties of user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:UpdatePropertiesSoapIn" />
+
+			<wsdl:output message="tns:UpdatePropertiesSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="PrepareMoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Prepares an existing user account to be moved to the specified destination OU.</wsdl:documentation>
+
+			<wsdl:input message="tns:PrepareMoveAccountSoapIn" />
+
+			<wsdl:output message="tns:PrepareMoveAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="MoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Moves an existing user account to the specified destination OU.</wsdl:documentation>
+
+			<wsdl:input message="tns:MoveAccountSoapIn" />
+
+			<wsdl:output message="tns:MoveAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CancelMoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancels a pending move process for the specified user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CancelMoveAccountSoapIn" />
+
+			<wsdl:output message="tns:CancelMoveAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RefreshRoleCache">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Refreshes the role cache for the calling user.</wsdl:documentation>
+
+			<wsdl:input message="tns:RefreshRoleCacheSoapIn" />
+
+			<wsdl:output message="tns:RefreshRoleCacheSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RenameAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Changes the name of the user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:RenameAccountSoapIn" />
+
+			<wsdl:output message="tns:RenameAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="GetAccountsByCorpDirUid">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Does a global catalog search for all accounts with the same specified CorpDir-ID.</wsdl:documentation>
+
+			<wsdl:input message="tns:GetAccountsByCorpDirUidSoapIn" />
+
+			<wsdl:output message="tns:GetAccountsByCorpDirUidSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="SetPrimaryAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tags the given corporate directory based user account as the primary account.</wsdl:documentation>
+
+			<wsdl:input message="tns:SetPrimaryAccountSoapIn" />
+
+			<wsdl:output message="tns:SetPrimaryAccountSoapOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ShowConfiguration">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Shows configuration settings of the UserManagementService</wsdl:documentation>
+
+			<wsdl:input message="tns:ShowConfigurationSoapIn" />
+
+			<wsdl:output message="tns:ShowConfigurationSoapOut" />
+
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+
+-<wsdl:portType name="UserManagementServiceHttpPost">
+
+
+-<wsdl:operation name="CreateAccountAdministrative">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates administrative user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountAdministrativeHttpPostIn" />
+
+			<wsdl:output message="tns:CreateAccountAdministrativeHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBased">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a corporate directory based user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountCdBasedHttpPostIn" />
+
+			<wsdl:output message="tns:CreateAccountCdBasedHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBasedEx">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a corporate directory based blue collared user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CreateAccountCdBasedExHttpPostIn" />
+
+			<wsdl:output message="tns:CreateAccountCdBasedExHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Locks/unlocks user acocunt with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:LockAccountHttpPostIn" />
+
+			<wsdl:output message="tns:LockAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccountEx">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Locks/unlocks blue collared user acocunt with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:LockAccountExHttpPostIn" />
+
+			<wsdl:output message="tns:LockAccountExHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ResetPassword">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reset password of user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:ResetPasswordHttpPostIn" />
+
+			<wsdl:output message="tns:ResetPasswordHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="DeleteAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:DeleteAccountHttpPostIn" />
+
+			<wsdl:output message="tns:DeleteAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ModifyAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Modifies user account with specified adUserId.</wsdl:documentation>
+
+			<wsdl:input message="tns:ModifyAccountHttpPostIn" />
+
+			<wsdl:output message="tns:ModifyAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="PrepareMoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Prepares an existing user account to be moved to the specified destination OU.</wsdl:documentation>
+
+			<wsdl:input message="tns:PrepareMoveAccountHttpPostIn" />
+
+			<wsdl:output message="tns:PrepareMoveAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="MoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Moves an existing user account to the specified destination OU.</wsdl:documentation>
+
+			<wsdl:input message="tns:MoveAccountHttpPostIn" />
+
+			<wsdl:output message="tns:MoveAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CancelMoveAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancels a pending move process for the specified user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:CancelMoveAccountHttpPostIn" />
+
+			<wsdl:output message="tns:CancelMoveAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RefreshRoleCache">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Refreshes the role cache for the calling user.</wsdl:documentation>
+
+			<wsdl:input message="tns:RefreshRoleCacheHttpPostIn" />
+
+			<wsdl:output message="tns:RefreshRoleCacheHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RenameAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Changes the name of the user account.</wsdl:documentation>
+
+			<wsdl:input message="tns:RenameAccountHttpPostIn" />
+
+			<wsdl:output message="tns:RenameAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="GetAccountsByCorpDirUid">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Does a global catalog search for all accounts with the same specified CorpDir-ID.</wsdl:documentation>
+
+			<wsdl:input message="tns:GetAccountsByCorpDirUidHttpPostIn" />
+
+			<wsdl:output message="tns:GetAccountsByCorpDirUidHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="SetPrimaryAccount">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tags the given corporate directory based user account as the primary account.</wsdl:documentation>
+
+			<wsdl:input message="tns:SetPrimaryAccountHttpPostIn" />
+
+			<wsdl:output message="tns:SetPrimaryAccountHttpPostOut" />
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ShowConfiguration">
+
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Shows configuration settings of the UserManagementService</wsdl:documentation>
+
+			<wsdl:input message="tns:ShowConfigurationHttpPostIn" />
+
+			<wsdl:output message="tns:ShowConfigurationHttpPostOut" />
+
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+
+-<wsdl:binding name="UserManagementServiceSoap"
+		type="tns:UserManagementServiceSoap">
+
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+
+
+-<wsdl:operation name="CreateAccountAdministrative">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountAdministrative" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBased">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountCdBased" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBasedEx">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountCdBasedEx" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/LockAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccountEx">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/LockAccountEx" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ResetPassword">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ResetPassword" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="DeleteAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/DeleteAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ModifyAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ModifyAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="UpdateProperties">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/UpdateProperties" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="PrepareMoveAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/PrepareMoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="MoveAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/MoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CancelMoveAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CancelMoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RefreshRoleCache">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/RefreshRoleCache" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RenameAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/RenameAccount" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="GetAccountsByCorpDirUid">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/GetAccountsByCorpDirUid" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="SetPrimaryAccount">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/SetPrimaryAccount" />
+
+
++<wsdl:input>
+
+
+-<wsdl:output>
+
+					<soap:body use="literal" />
+
+				</wsdl:output>
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ShowConfiguration">
+
+			<soap:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ShowConfiguration" />
+
+
+-<wsdl:input>
+
+				<soap:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+
+-<wsdl:binding name="UserManagementServiceSoap12"
+		type="tns:UserManagementServiceSoap">
+
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+
+
+-<wsdl:operation name="CreateAccountAdministrative">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountAdministrative" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBased">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountCdBased" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBasedEx">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CreateAccountCdBasedEx" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/LockAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccountEx">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/LockAccountEx" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ResetPassword">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ResetPassword" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="DeleteAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/DeleteAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ModifyAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ModifyAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="UpdateProperties">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/UpdateProperties" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="PrepareMoveAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/PrepareMoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="MoveAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/MoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CancelMoveAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/CancelMoveAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RefreshRoleCache">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/RefreshRoleCache" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RenameAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/RenameAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="GetAccountsByCorpDirUid">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/GetAccountsByCorpDirUid" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="SetPrimaryAccount">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/SetPrimaryAccount" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ShowConfiguration">
+
+			<soap12:operation style="document"
+				soapAction="http://daimler.com/adminnet/webservices/usermanagement/ShowConfiguration" />
+
+
+-<wsdl:input>
+
+				<soap12:body use="literal" />
+
+				<dm:validation />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<soap12:body use="literal" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+
+-<wsdl:binding name="UserManagementServiceHttpPost"
+		type="tns:UserManagementServiceHttpPost">
+
+		<http:binding verb="POST" />
+
+
+-<wsdl:operation name="CreateAccountAdministrative">
+
+			<http:operation location="/CreateAccountAdministrative" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBased">
+
+			<http:operation location="/CreateAccountCdBased" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CreateAccountCdBasedEx">
+
+			<http:operation location="/CreateAccountCdBasedEx" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccount">
+
+			<http:operation location="/LockAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="LockAccountEx">
+
+			<http:operation location="/LockAccountEx" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ResetPassword">
+
+			<http:operation location="/ResetPassword" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="DeleteAccount">
+
+			<http:operation location="/DeleteAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ModifyAccount">
+
+			<http:operation location="/ModifyAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="PrepareMoveAccount">
+
+			<http:operation location="/PrepareMoveAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="MoveAccount">
+
+			<http:operation location="/MoveAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="CancelMoveAccount">
+
+			<http:operation location="/CancelMoveAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RefreshRoleCache">
+
+			<http:operation location="/RefreshRoleCache" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="RenameAccount">
+
+			<http:operation location="/RenameAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="GetAccountsByCorpDirUid">
+
+			<http:operation location="/GetAccountsByCorpDirUid" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="SetPrimaryAccount">
+
+			<http:operation location="/SetPrimaryAccount" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+
+-<wsdl:operation name="ShowConfiguration">
+
+			<http:operation location="/ShowConfiguration" />
+
+
+-<wsdl:input>
+
+				<mime:content type="application/x-www-form-urlencoded" />
+
+			</wsdl:input>
+
+
+-<wsdl:output>
+
+				<mime:mimeXml part="Body" />
+
+			</wsdl:output>
+
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+
+-<wsdl:service name="UserManagementService">
+
+		<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Daimler Admin.NET UserManagement Service</wsdl:documentation>
+
+
+-<wsdl:port name="UserManagementServiceSoap"
+			binding="tns:UserManagementServiceSoap">
+
+			<soap:address
+				location="https://adume2.app.corpintra.net/UserManagementService/UserManagementService.asmx" />
+
+		</wsdl:port>
+
+
+-<wsdl:port name="UserManagementServiceSoap12"
+			binding="tns:UserManagementServiceSoap12">
+
+			<soap12:address
+				location="https://adume2.app.corpintra.net/UserManagementService/UserManagementService.asmx" />
+
+		</wsdl:port>
+
+
+-<wsdl:port name="UserManagementServiceHttpPost"
+			binding="tns:UserManagementServiceHttpPost">
+
+			<http:address
+				location="https://adume2.app.corpintra.net/UserManagementService/UserManagementService.asmx" />
+
+		</wsdl:port>
+
+	</wsdl:service>
+
+</wsdl:definitions>
