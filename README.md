@@ -1,8 +1,6 @@
 # acinonyx
 
 ## A self service portal for hadoop operations in a HDP Cluster
-### Acinonyx aims at change management automation in an enterprise
-
 
 ### Login Page
 ![Login Page](https://github.com/hemantdindi/acinonyx/blob/master/images/01.png)
@@ -22,6 +20,6 @@
 ### OS User/Group, Folder creations on Edge Nodes
 ![OS User/Group, Folder creations on Edge Nodes](https://github.com/hemantdindi/acinonyx/blob/master/images/06.png)
 
-### Kafka Topic creation form
-![Kafka Topic creation form](https://github.com/hemantdindi/acinonyx/blob/master/images/07.png)
+### Kafka Topic creation
+![Kafka Topic creation](https://github.com/hemantdindi/acinonyx/blob/master/images/07.png)
 
