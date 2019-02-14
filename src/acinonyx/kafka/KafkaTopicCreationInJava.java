@@ -22,7 +22,7 @@ public class KafkaTopicCreationInJava {
 		ZkUtils zkUtils = null;
 		boolean createdTopic = false;
 		try {
-			String zookeeperHosts = "sgscvaiu0304.inedc.corpintra.net:2181";
+			String zookeeperHosts = "zookeeper:2181";
 			int sessionTimeOutInMs = 15 * 1000;
 			int connectionTimeOutInMs = 10 * 1000;
 			ReadConfiguration rconf = new ReadConfiguration();
@@ -50,9 +50,9 @@ public class KafkaTopicCreationInJava {
 				System.out.println("No ACLs processed..!");
 			}
 
-			String[] cmdPArm = { "--add", "--allow-principal", "user:hemant2@INEDC.CORPINTRA.NET", "--operation", "ALL",
+			String[] cmdPArm = { "--add", "--allow-principal", "user:hemant2@ABC.HEMANT.NET", "--operation", "ALL",
 					"--topic", topicName, "--authorizer-properties",
-					"zookeeper.connect=sgscvaiu0304.inedc.corpintra.net:2181" };
+					"zookeeper.connect=zookeeper:2181" };
 			// if(createdTopic)
 			AclCommand.main(cmdPArm);
 
